@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/forum/view.css') }}">
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <section id="view">
+        {#{{ dump(question) }}#}
+
+        <div class="back_view">
+            <div class="top_view">
+                <h2>{{ question.title}}</h2>
+                <p>{{ question.getDatePosted() | date("m/d/Y à H:i:s")  }},(by {{ question.author.username }})</p><hr>
+            </div>
+
+            <div class="question_content">
+                <p class="question_para">{{ question.body | raw }}</p>
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+{% endblock %}

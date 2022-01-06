@@ -1,0 +1,208 @@
+#friends {
+    background-color: #363743;
+    padding: 50px 1%;
+    width: 85%;
+    position: relative;
+}
+
+#friends-icons {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: white;
+    font-size: 2.5em;
+}
+
+#waiting-friend:after {
+    content: attr(data-after);
+    color: orange;
+    font-size: 0.5em;
+    font-family: sans-serif;
+}
+
+#friends-icons > i:hover {
+    cursor: pointer;
+    color: #0CC89F;
+}
+
+#friends-img-list {
+    display: flex;
+    overflow-x: scroll;
+    width: 80%;
+    margin: auto;
+}
+
+#friends-img-list::-webkit-scrollbar {
+    display: none;
+}
+
+.friend-img {
+    position: relative;
+    margin: 20px;
+}
+
+.friend-img > img {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+.friend-img > i {
+    position: absolute;
+    bottom: 30px;
+    right: 5px;
+    font-size: 1.5em;
+}
+
+.friend-img > p {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.friend-img > i.online {
+    color: var(--green);
+}
+
+.friend-img > i.offline {
+    color: var(--red);
+}
+
+#friend-buttons {
+    width: 40%;
+    display: flex;
+    margin: 50px 0;
+}
+
+#friend-buttons i {
+    font-size: 2.8em;
+    color: var(--green);
+}
+
+#friend-buttons i:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#friend-buttons h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    font-family: sans-serif;
+    background-color: var(--green);
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.msg-block {
+    background-color: #252633;
+    border: #707070 solid 1px;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.msg-block > img {
+    max-width: 3%;
+    border-radius: 50%;
+    border: #707070 solid 1px;
+    object-fit: contain;
+}
+
+.msg-block > p {
+    width: 80%;
+    text-align: left;
+    color: var(--green);
+    font-family: sans-serif;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msg-block > p::-webkit-scrollbar {
+    display: none;
+}
+
+.msg-block > button {
+    width: 10%;
+    background-color: #707070;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+.msg-block > button:hover {
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+/* ADD POPUP */
+
+.info-block {
+    background-color: var(--grey);
+    color: white;
+    margin: 30px 0;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.info-block.error {
+    background-color: var(--error);
+}
+
+.info-block.success {
+    background-color: var(--success);
+}
+
+.info-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.infos {
+    font-size: 1em;
+}
+
+#add-friend-list > li, #request-friend-list > li {
+    display: flex;
+    margin-top: 20px;
+}
+
+#add-friend-list > li > img, #request-friend-list > li > img {
+    max-width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#add-friend-list > li > h3, #request-friend-list > li > h3 {
+   color: white;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#add-friend-list > li > button, #request-friend-list > li > button {
+    background-color: var(--green);
+    padding: 0 10px;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+}
+
+#add-friend-list > li > button:hover, #request-friend-list > li > button:hover {
+    cursor: pointer;
+    outline: none;
+}
+
+.no-request {
+    color: white;
+    font-size: 1.6em;
+    font-family: sans-serif;
+}

@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/questions.css') }}">
+
+{% endblock stylesheets %}
+
+{% block body %}
+
+    <div class="back_form">
+        <h3>Poses ta question</h3>
+        <form action="{{ callback }}" method="post" id="question-send-form">
+            <input class="question" placeholder="Question" id="question-title" required minlength="1" maxlength="255" name="questionTitle">
+            <input type="hidden" id="question-body-input-hidden" required minlength="1" name="questionContent">
+            <div id="rich-editor"></div>
+            <input class="button" type="submit" value="Poser la question"/>
+        </form>
+    </div>
+
+{% endblock body %}
+
+{% block javascripts %}
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+        const questionBody = new Quill('#rich-editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: ['bold', 'italic', 'underline', 'code-block']
+            }
+        });
+        document.getElementById('question-send-form').addEventListener('submit', submitQuestion)
+
+        function submitQuestion(event) {
+            const questionTitle = document.getElementById("question-title").value
+            document.getElementById('question-body-input-hidden').value = document.querySelector("#rich-editor > .ql-editor").innerHTML
+            if (questionTitle.trim().length === 0 || questionBody.getText().trim().length === 0) {
+                event.preventDefault()
+            }
+        }
+    </script>
+{% endblock javascripts %}

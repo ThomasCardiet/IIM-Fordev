@@ -1,0 +1,129 @@
+/* COMPUTER SECTION */
+
+.computer {
+    background: url('../img/homepage/background_1.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+}
+
+/* POPULAR SECTION */
+
+.popular {
+    background-color: var(--green);
+    padding: 30px 0;
+    font-family: "Zilla Slab", sans-serif;
+}
+
+.popular > h2, .popular_tags {
+    width: 90%;
+    margin: auto;
+}
+
+.popular_tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.popular_tags > p {
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: black solid 1px;
+    margin-right: 20px;
+}
+
+/* QUESTION CARD SECTION */
+
+.question_cards {
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.question_cards > .card {
+    border-radius: 20px;
+    border: rgba(0,0,0,0.5) solid 1px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    padding: 40px 5px;
+    text-align: center;
+    width: calc((100% - 30%)/3);
+    font-family: "Zilla Slab", sans-serif;
+}
+
+.question_cards > .card > img {
+    object-fit: contain;
+    max-width: 85%;
+}
+
+.question_cards > .card > p {
+    width: 75%;
+    font-size: 1.7em;
+    margin: 30px auto;
+}
+
+.question_cards > .card > a {
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* QESTION RECENT SECTION */
+
+.question_recent {
+    background-color: var(--yellow);
+    padding: 18px 0;
+    font-family: "Zilla Slab", sans-serif;
+}
+
+.question_recent_content {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+}
+
+.question_recent_content_left {
+    width: 50%;
+}
+
+.question_recent_content_left > h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.question_recent_content_left_block {
+    background-color: white;
+    padding: 20px 6%;
+    border-radius: 30px;
+    width: 80%;
+    margin: 45px 0;
+}
+
+.question_recent_content_left_block > h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.question_recent_content_left_block_tags {
+    display: flex;
+}
+
+.question_recent_content_left_block_tags > p {
+    background-color: var(--yellow);
+    border: black solid 1px;
+    border-radius: 20px;
+    padding: 5px 12px;
+    margin-right: 15px;
+}
+
+.question_recent_content > img {
+    object-fit: contain;
+    width: 25%;
+}

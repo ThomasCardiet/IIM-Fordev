@@ -1,0 +1,29 @@
+main {
+    padding-top: 180px;
+    background-color: var(--dark_grey);
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+#view {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.back_view {
+    background-color: #ffffff;
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.top_view {
+    padding: 2% 4%;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.question_content {
+    padding: 2% 5%;
+}

@@ -1,0 +1,194 @@
+#guild {
+    background-color: #363743;
+    padding: 50px 1%;
+    width: 85%;
+}
+
+#guild-img-list {
+    display: flex;
+    overflow-x: scroll;
+    width: 80%;
+    margin: auto;
+}
+
+#guild-img-list::-webkit-scrollbar {
+    display: none;
+}
+
+.guild-img {
+    position: relative;
+    margin: 20px;
+}
+
+.guild-img > img {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+.guild-img > i {
+    position: absolute;
+    bottom: 30px;
+    right: 5px;
+    font-size: 1.5em;
+}
+
+.guild-img > p {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.guild-img > i.online {
+    color: #0CC89F;
+}
+
+.guild-img > i.offline {
+    color: #E6103B;
+}
+
+#guild-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+
+#guild-buttons > h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    font-family: sans-serif;
+    background-color: #25E2B7;
+    width: calc((100% - 10%) / 2);
+    text-align: center;
+    margin: 50px 0;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+#guild-buttons > h3:hover {
+    cursor: pointer;
+    background-color: #10fac9;
+}
+
+#guild > h4 {
+    color: #25E2B7;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* CURRENT MSG */
+#guild-current-msg {
+    background-color: #252633;
+    border: solid 1px #707070;
+    height: 500px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    overflow-y: scroll;
+}
+
+#guild-current-msg::-webkit-scrollbar {
+    display: none;
+}
+
+#guild-current-msg {
+    background-color: #252633;
+    border: solid 1px #707070;
+    height: 500px;
+    padding: 0 20px;
+    overflow: auto;
+}
+
+#guild-current-msg-block {
+    max-width: 40%;
+    display: flex;
+    margin: 20px 0;
+    clear: right;
+}
+
+#guild-current-msg-block > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 1px #707070;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+#guild-current-msg-block > div > h5 {
+    color: #25E2B7;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+#guild-current-msg-block > div > p {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+#guild-current-msg-block.owner {
+    float: right;
+}
+
+#guild-current-msg-block.owner > img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+#guild-current-msg-block.owner > div > h5 {
+    text-align: right;
+    color: #1B9748;
+}
+
+/* NEW MSG */
+#guild-new-msg {
+    display: flex;
+    justify-content: space-between;
+}
+
+#guild-new-msg-left {
+    background-color: #252633;
+    border: solid 1px #707070;
+    width: 75%;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.3em;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+#guild-new-msg-left::-webkit-scrollbar {
+    display: none;
+}
+
+#guild-new-msg-right {
+    width: 24%;
+    text-align: center;
+}
+
+#guild-new-msg-right > img {
+    max-width: 30%;
+    margin-bottom: 20px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: solid 1px #707070;
+}
+
+#guild-new-msg-right > p {
+    background-color: #25E2B7;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    padding: 10px 0;
+    color: white;
+}
+
+#guild-new-msg-right > p:hover {
+    cursor: pointer;
+    background-color: #10fac9;
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <section class="computer"></section>
+    <section class="popular">
+        <h2>#Populaire:</h2>
+        <div class="popular_tags">
+            <p>#HTML</p>
+            <p>#CSS</p>
+            <p>#JAVASCRIPT</p>
+            <p>#PHP</p>
+            <p>#SYMFONY</p>
+            <p>#REACT</p>
+            <p>#UXUI</p>
+        </div>
+    </section>
+
+    <section class="question_cards">
+        {% for i in range(0,2) %}
+            <div class="card">
+                <img src="{{ asset('img/homepage/card_img.png') }}" alt="#">
+                <p>Poses tes questions à la communauté</p>
+                <a href="">Créer ma question</a>
+            </div>
+        {% endfor %}
+    </section>
+
+    <section class="question_recent">
+        <div class="question_recent_content">
+            <div class="question_recent_content_left">
+                <h2>Questions récentes:</h2>
+
+                {% for i in range(0,2) %}
+                    <div class="question_recent_content_left_block">
+                        <h3>Comment créer une animation CSS ?</h3>
+                        <div class="question_recent_content_left_block_tags">
+                            <p>#CSS</p>
+                            <p>#HTML</p>
+                            <p>#JAVASCRIPT</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <img src="{{ asset('img/homepage/recent_question.png') }}" alt="#">
+        </div>
+    </section>
+
+{% endblock %}

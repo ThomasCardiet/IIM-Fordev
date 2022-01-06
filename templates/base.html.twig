@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Site Officiel du Forum Fordev, pour développeurs tous langages de programmation">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="{{ asset('img/logo.png') }}">
+
+        <title>{% block title %}{% endblock %}</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/dc883addae.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <header>
+
+            <section class="header-top">
+
+                <div class="header-top-logo">
+                    <img src="{{ asset('img/logo.png') }}" alt="#">
+                    <div class="header-top-logo-desc">
+                        <p>For me, For you,</p>
+                        <h1>FOR DEV</h1>
+                        <hr>
+                    </div>
+                </div>
+
+                <form action="{{ path('forum_search') }}" class="header-top-search" method="post">
+                    <i class="fas fa-search"></i>
+                    <input type="text" name="header_search_content" placeholder="Recherche" value="{% if (search_value is defined) and (search_value != null) %}{{ search_value }}{% endif %}">
+                </form>
+
+            </section>
+
+            <section class="header-bot">
+                <div class="header-bot-nav">
+                    <div class="header-bot-nav-circle"></div>
+                    <nav class="header-bot-nav-links">
+                        <a {% if app.request.get('_route')|lower  == 'home' %}class="underlined"{% endif %} href="{{ path("Home") }}">Accueil</a>
+                        {% if logged_user is defined and logged_user != null %}
+                            <a href="{{ path('My Profile') }}">Mon profil</a>
+                            <a href="{{ path('Logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('Auth Page') }}">Se connecter</a>
+                        {% endif %}
+                        <a {% if app.request.get('_route')|lower  == 'forum' %}class="underlined"{% endif %} href="{{ path("forum") }}">Forum</a>
+                    </nav>
+                </div>
+            </section>
+
+        </header>
+
+        <main>{% block body %}{% endblock %}</main>
+
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="links">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Forum</a></li>
+                                <li><a href="#">Aide</a></li>
+                            </ul>
+                        </div>
+                        <div class="about">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">A propos</a></li>
+                                <li><a href="#">CGU</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="presentation item text">
+                            <h3>Fordev</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        </div>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+
+                    <p class="copyright">Fordev © 2021</p>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,174 @@
+:root {
+
+    --dark_grey: #252633;
+    --light_grey: #363743;
+    --grey: #9c9c9c;
+    --yellow: #FFEE3E;
+    --green: #00fec2;
+    --dark_green: #00694f;
+    --blue: #488CE1;
+    --red: #E6103B;
+    --error: #ab2f2f;
+    --success: #37a237;
+
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'zilla_slabmedium';
+    src: url('../fonts/zillaslab-medium-webfont.woff2') format('woff2'),
+    url('../fonts/zillaslab-medium-webfont.woff') format('woff'),
+    url('../fonts/Roboto-Medium.ttf') format('ttf'),
+    url('../fonts/Roboto-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+    /* HEADER TOP SECTION */
+
+.header-top {
+    background-color: black;
+    position: relative;
+    height: 90px;
+}
+
+        /* LOGO */
+
+.header-top-logo {
+    display: flex;
+    position: absolute;
+    width: 50%;
+    top: 20px;
+    left: 2%;
+    z-index: 1;
+}
+
+.header-top-logo > img {
+    background-color: var(--dark_grey);
+    border-radius: 50%;
+    object-fit: contain;
+    width: 9em;
+}
+
+.header-top-logo-desc {
+    font-family: "zilla_slabmedium", sans-serif;
+    color: white;
+    margin-left: 10px;
+    width: 50%;
+}
+
+.header-top-logo-desc > h1, .header-top-logo-desc > hr {
+    margin: 0 0 0 15px;
+}
+
+.header-top-logo-desc > p{
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.header-top-logo-desc > h1{
+    font-size: 2em;
+    margin-top: -6px;
+}
+
+        /* SEARCH */
+
+.header-top-search {
+    float: right;
+    margin-right: 1%;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.header-top-search > i {
+    font-size: 1.3em;
+}
+
+.header-top-search > input {
+    border: none;
+    font-size: 1.2em;
+    outline: none;
+}
+
+/* HEADER BOT SECTION */
+
+.header-bot {
+    background-color: var(--yellow);
+    padding: 10px 0;
+    height: 90px;
+}
+
+.header-bot-nav {
+    height: 65px;
+    background-color: var(--dark_grey);
+    box-sizing: border-box;
+    width: 88.9%;
+    float: right;
+    margin-right: 1%;
+    position: relative;
+}
+
+.header-bot-nav-circle {
+    clip-path: ellipse(54px 100% at 0 2%);
+    width: 54px;
+    height: 100%;
+    float: left;
+    background-color: var(--yellow);
+    position: absolute;
+
+}
+
+.header-bot-nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px auto 0 auto;
+}
+
+.header-bot-nav-links > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    z-index: 1;
+    font-family: sans-serif;
+}
+
+.header-bot-nav-links > a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 4px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.header-bot-nav-links > a:hover:after, .header-bot-nav-links > a:hover:after, .header-bot-nav-links > a.underlined:after {
+    width: 100%;
+    background: white;
+}
+

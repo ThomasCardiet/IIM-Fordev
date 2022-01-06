@@ -1,0 +1,13 @@
+main{
+    background-color: var(--light_grey);
+
+}
+
+.mention{
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 230px;
+    font-family: "Roboto-Regular", sans-serif;
+    color: #ffffff;
+}

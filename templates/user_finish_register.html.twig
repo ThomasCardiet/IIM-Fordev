@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/user_finish_register.css') }}">
+
+{% endblock stylesheets %}
+
+{% block body %}
+    <!--suppress HtmlUnknownTarget, HtmlRequiredAltAttribute -->
+    <div class="back_form">
+        <form method="post"
+              action="/auth_finish">
+            <img src="https://outlook.office.com/owa/service.svc/s/GetPersonaPhoto?email={{ user.email }}&size=HR360x360"/>
+            {{ user.firstName }}
+            {{ user.lastName }}
+            {% if errors is defined %}
+                {{ errors }}
+            {% endif %}
+            <br>
+            <br>
+            <label for="username">Username :</label>
+            <input type="text"
+                   name="username"
+                   id="username"
+                   minlength="4"
+                   maxlength="24"
+                   required>
+            <input type="submit" class="button"
+                   value="Valider">
+        </form>
+    </div>
+
+{% endblock %}

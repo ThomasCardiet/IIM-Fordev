@@ -1,0 +1,195 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/profile/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile/myprofile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile/friends.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile/guild.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile/popups.css') }}">
+{% endblock %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+    <section id="profile">
+
+        <div id="profile-menu">
+
+            <div id="profile-menu-left">
+                <p class="profile-btn">Profil</p>
+                <p class="profile-btn">Amis</p>
+                {#<p class="profile-btn">Guilde</p>#}
+            </div>
+
+            {# MENUS SECTION #}
+            <div data-id="{{ user.id }}" class="menu-info" id="myprofile">
+
+                <img src="https://outlook.office.com/owa/service.svc/s/GetPersonaPhoto?email={{ user.email }}&size=HR360x360" alt="">
+                <h1 id="menu-info-username">{{ user.username }}</h1>
+                <h2>Email: {{ user.email }}</h2>
+                <button id="menu-info-btn">Modifier</button>
+                
+            </div>
+
+            <div class="menu-info" id="friends">
+
+                <div id="friends-icons">
+                    <i id="waiting-friend" data-type="acceptfriend" class="popup-btn fas fa-user-clock" data-requests="{{ friends_requests | length }}"></i>
+                    <i id="add-friend" data-type="addfriend" class="popup-btn fas fa-user-plus"></i>
+                </div>
+
+                <div id="friends-img-list"></div>
+
+                <div id="friend-buttons">
+                    <i data-type="friends-list" class="popup-btn fas fa-user-friends"></i>
+                    <h3>Discussions Récentes:</h3>
+                </div>
+
+                <div id="friends-msg-block"></div>
+
+            </div>
+
+            {#<div class="menu-info" id="guild">
+
+                <div id="guild-img-list">
+                    {% for i in range(0,3) %}
+                        <div class="guild-img">
+                            <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                            <i class="offline fas fa-circle"></i>
+                            <p>Alex</p>
+                        </div>
+                    {% endfor %}
+                    {% for i in range(0,2) %}
+                        <div class="guild-img">
+                            <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                            <i class="online fas fa-circle"></i>
+                            <p>Alex</p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div id="guild-buttons">
+                    <h3>Inviter des amis</h3>
+                    <h3>Gérer les membres</h3>
+                </div>
+
+                <h4>Messages de guilde :</h4>
+                <div id="guild-current-msg">
+
+                    {% for i in range(0,3) %}
+                        <div id="guild-current-msg-block">
+                            <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                            <div>
+                                <h5>TraXxFr</h5>
+                                <p>Salut les mecs ça va ?</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div id="guild-current-msg-block" class="owner">
+                        <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                        <div>
+                            <h5>TraXxFr</h5>
+                            <p>Salut les mecs ça va ?</p>
+                        </div>
+                    </div>
+
+                    {% for i in range(0,3) %}
+                        <div id="guild-current-msg-block">
+                            <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                            <div>
+                                <h5>TraXxFr</h5>
+                                <p>Salut les mecs ça va ? ou pas !</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                <h4>Nouveau message :</h4>
+                <div id="guild-new-msg">
+                    <textarea id="guild-new-msg-left"></textarea>
+                    <div id="guild-new-msg-right">
+                        <img src="{{ asset("img/profile/pp.png") }}" alt="">
+                        <p>Répondre</p>
+                    </div>
+                </div>
+
+            </div>#}
+
+            {# POPUPS SECTION #}
+            <div id="overlay"></div>
+
+            {#FRIENDS MSG POPUP#}
+            <div class="menu-popup" id="friends-list-popup">
+
+                <i class="fas fa-times close"></i>
+
+                <h4>liste de vos amis:</h4>
+
+                <input id="friend-list-search" type="text" placeholder="Rechercher">
+
+                <table id="friend-list-table"></table>
+
+            </div>
+
+            {#FRIENDS MSG POPUP#}
+            <div class="menu-popup" id="friends-popup">
+
+                <i class="fas fa-times close"></i>
+
+                <h4></h4>
+
+                <div id="friends-current-msg"></div>
+
+                <h4>Nouveau message :</h4>
+                <div id="friends-new-msg">
+                    <textarea id="friends-new-msg-left"></textarea>
+                    <p data-friend_id="" id="friends-new-msg-send">Envoyer</p>
+                </div>
+            </div>
+
+            {# ADD FRIEND POPUP #}
+            <div class="menu-popup" id="addfriend-popup">
+
+                <i class="fas fa-times close"></i>
+
+                <div class="info-block">
+                    <h3 class="info-title"><i class="fas fa-exclamation-triangle"></i> Une ou plusieurs erreurs sont parvenues:</h3>
+                    <p class="infos"></p>
+                </div>
+
+                <h4>Ajouter un ami :</h4>
+                <input id="add-friend-search" type="text" placeholder="Rechercher">
+
+                <ul id="add-friend-list"></ul>
+
+            </div>
+
+            {# ACCEPT FRIEND POPUP #}
+            <div class="menu-popup" id="acceptfriend-popup">
+
+                <i class="fas fa-times close"></i>
+
+                <div class="info-block">
+                    <h3 class="info-title"><i class="fas fa-exclamation-triangle"></i> Une ou plusieurs erreurs sont parvenues:</h3>
+                    <p class="infos"></p>
+                </div>
+
+                <h4>Requêtes reçues :</h4>
+
+                <ul id="request-friend-list"></ul>
+
+            </div>
+
+        </div>
+
+    </section>
+    <hr>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("js/profile.js") }}"></script>
+{% endblock %}

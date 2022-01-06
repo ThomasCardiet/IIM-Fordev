@@ -1,0 +1,36 @@
+main {
+    padding-top: 180px;
+    font-family: "Roboto Medium", sans-serif;
+
+}
+
+.back_form {
+    background-color: var(--light_grey);
+    padding: 10%;
+}
+
+form {
+    max-width: 70%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 2%;
+
+
+}
+
+.button {
+    margin-top: 25px;
+    background-color: var(--success);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}

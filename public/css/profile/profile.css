@@ -1,0 +1,35 @@
+#profile {
+    margin-top: 180px;
+    padding: 100px 0;
+    background-color: #30333F;
+}
+
+#profile-menu {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+#profile-menu-left {
+    width: 15%;
+    background-color: #252633;
+}
+
+.profile-btn {
+    color: white;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+.profile-btn:hover, .profile-btn.active {
+    color: #00FFC3;
+    background-color: #363743;
+    cursor: pointer;
+}
+
+hr {
+    border: #FFE700 solid 4px;
+}

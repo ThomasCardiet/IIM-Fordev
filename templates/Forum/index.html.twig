@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/forum/frontpage.css') }}">
+{% endblock %}
+
+{% block title %}Forum{% endblock %}
+
+{% block body %}
+
+
+
+    <!-- Page Content -->
+
+            <section id="forum_content">
+
+
+
+                <div class="question">
+
+                    <h3>Un problème dans ton code ? <a href="{{ path("Ask a question") }}">Poses ta question à la communauté Fordev !</a> </h3>
+
+                </div>
+                <div class="populaire">
+                    <div>
+                        <h2>#Populaire :</h2>
+                    </div>
+
+                    <div class="tags">
+                        <div class="tag" style="background-color: #3C947F">#CSS</div>
+                        <div class="tag" style="background-color: #A4C2A6">#STYLE</div>
+                        <div class="tag" style="background-color: #94683C">#GITHUB</div>
+                        <div class="tag" style="background-color: #0C0C0C">#REPOSITORY</div>
+                        <div class="tag" style="background-color: #9D09FF">#ANIME</div>
+                        <div class="tag" style="background-color: #3C947F">#HTML</div>
+                        <div class="tag" style="background-color: #94483C">#CLONE</div>
+                        <div class="tag" style="background-color: #000604">#JAVASCRIPT</div>
+                        <div class="tag" style="background-color: #B492A5">#CSS</div>
+                        <div class="tag" style="background-color: #3C947F">#PHP</div>
+                    </div>
+                </div>
+
+
+                {% if latest is not empty %}
+                    <div id="latest-questions">
+                        <h4>Dernières questions :</h4>
+                        {% for latest_question in latest %}
+                            <div class="latest-question">
+                                <h3>{{ latest_question.title }} (by {{ latest_question.author.username }})</h3>
+                                <a href="{{ path("Question",{questionId:latest_question.id}) }}">voir le post...</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </section>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://kit.fontawesome.com/49fa084123.js" crossorigin="anonymous"></script>
+    <script src="{{ asset("js/sidebar.js") }}"></script>
+
+{% endblock %}
